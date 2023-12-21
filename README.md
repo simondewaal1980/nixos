@@ -1,7 +1,7 @@
 # nixos
 Dit is mijn Nixos configuratie.
 
-Download één van de Nixos iso's op www.nixos.com.
+Download één van de Nixos iso's op www.nixos.org.
 
 #gebruik van deze NIXOS configuratie 
 Open daar een terminal en type:git clone https://github.com/simondewaal1980/nixos
