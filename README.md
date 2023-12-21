@@ -11,6 +11,6 @@ Voer het script ./prepinstall.sh uit en kopieer configuration.nix naar /mnt/etc/
 Doe aanpassingen aan configuration.nix, wijzig indien van toepassing uw gebruikersnaam.
 
 
-# installeer NIXOS test
+# installeer NIXOS
 
 type nixos-install
