@@ -10,6 +10,7 @@ Voer het script ./prepdisk.sh uit en kopieer configuration.nix naar /mnt/etc/nix
 
 Doe aanpassingen aan configuration.nix, wijzig indien van toepassing uw gebruikersnaam.
 
+
 # installeer NIXOS
 
 type nixos-install
