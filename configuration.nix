@@ -163,6 +163,7 @@ networkmanagerapplet
 vmware-workstation
 nodejs
 rofi
+github-desktop
 #Gnome extentions
 amf-headers
 libheif
