@@ -2,7 +2,7 @@
 lsblk
 
 # Vraag de gebruiker om de disk te kiezen
-echo "Kies de disk met voldoende vrije ruimte uit bovenstaande lijst waarop je NixOS wilt installeren,bestaande gegevens op gekozen disk gaan verloren!"
+echo "Kies een disk met voldoende vrije ruimte uit de lijst om NIXOS te installeren door de naam van de disk in te tikken en daarna op enter te drukken,bestaande gegevens op gekozen disk gaan verloren!"
 read DISK
 
 # Controleer of de disk bestaat
