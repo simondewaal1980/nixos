@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 # Vraag de gebruiker om de disk te kiezen
-DISK=$(lsblk -d -n -o NAME | awk -v disk_number="$disk_number" 'NR == disk_number')
+echo "Kies de disk waarop je NixOS wilt installeren (bijv. /dev/sda of /dev/nvme0n1):"
+read DISK
 
-# Check if the disk is valid
-if [[ -z DISK ]]; then
-  echo "Verkeerd disknummer"
+# Controleer of de disk bestaat
+if [ ! -b "$DISK" ]; then
+  echo "Disk $DISK bestaat niet of is geen blokapparaat. Probeer het opnieuw."
   exit 1
 fi
+
 # Maak een GPT-partitietabel aan
 parted "$DISK" -- mklabel gpt
 
