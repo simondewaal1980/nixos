@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 lsblk
-rcho "druk op een toets om verder te gaan naar diskkeuze uit bovenstaande lijst"
+echo "druk op een toets om verder te gaan naar diskkeuze"
 read
 # Vraag de gebruiker om de disk te kiezen
-echo "Kies de disk waarop je NixOS wilt installeren (bijv. /dev/sda of /dev/nvme0n1):"
+echo "Kies de disk uit bovenstaande lijst waarop je NixOS wilt installeren,bestaande gegevens op  gekozen disk gaan verloren!"
 read DISK
 
 # Controleer of de disk bestaat
