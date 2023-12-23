@@ -130,7 +130,8 @@ fuse
    vlc 
 lutris
 fuse3
-   spotify
+spotify
+kdenlive
  onlyoffice-bin
  krita
 neofetch
