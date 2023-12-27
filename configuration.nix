@@ -142,8 +142,10 @@ gnome.gnome-system-monitor
   xorg.xhost 
   virt-manager
  glxinfo
-guake
- google-chrome
+#guake
+libsForQt5.yakuake
+
+google-chrome
  variety
  pkgs.nil
   distrobox
