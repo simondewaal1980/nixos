@@ -60,6 +60,8 @@ hardware.opengl.extraPackages = with pkgs; [
 hardware.opengl.driSupport32Bit = true;
  # Enable the Desktop Environment.
  services.xserver.displayManager.sddm.enable = true;
+services.xserver.displayManager.sddm.theme = "sugar candy";
+ 
  services.xserver.desktopManager.plasma5.enable = true;
  #services.xserver.windowManager.dk.enable =true;
  services.dbus.packages = with pkgs; [ gnome2.GConf ];
