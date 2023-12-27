@@ -118,13 +118,14 @@ adwaita-qt
 	]))
  #diverse pakketen
  python3
-  xdg-user-dirs
+ xdg-user-dirs
  filezilla
 teams-for-linux
   vim_configurable # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
    wget
    handbrake
-git  
+   libsForQt5.sddm-kcm
+   git  
 dvdbackup
 fuse
    vlc 
