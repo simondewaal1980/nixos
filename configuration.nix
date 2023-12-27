@@ -146,7 +146,8 @@ gnome.gnome-system-monitor
 libsForQt5.yakuake
 
 google-chrome
- variety
+ #variety
+libsForQt5.bismuth
  pkgs.nil
   distrobox
 dosfstools
