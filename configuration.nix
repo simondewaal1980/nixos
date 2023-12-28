@@ -209,8 +209,19 @@ programs.steam.enable =true;
 programs.bash.interactiveShellInit ="neofetch" ;
 
 #autoupdater
-system.autoUpgrade.enable = true;
-system.autoUpgrade.allowReboot = false;
+system.autoUpgrade = {
+  enable = true;
+  flake = inputs.self.outPath;
+  flags = [
+    "--update-input"
+    "nixpkgs"
+    "-L" # print build logs
+  ];
+  dates = "02:00";
+  randomizedDelaySec = "45min";
+};
+#system.autoUpgrade.enable = true;
+#system.autoUpgrade.allowReboot = false;
 #Auto garbagecollector
  nix.gc = {
        automatic = true;
