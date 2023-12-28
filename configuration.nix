@@ -211,7 +211,7 @@ programs.bash.interactiveShellInit ="neofetch" ;
 #autoupdater
 system.autoUpgrade = {
   enable = true;
-  flake = inputs.self.outPath;
+  flake = "/home/simon/nixos"; 
   flags = [
     "--update-input"
     "nixpkgs"
