@@ -217,7 +217,7 @@ system.autoUpgrade = {
     "nixpkgs"
     "-L" # print build logs
   ];
-  dates = "02:00";
+  dates = "19:00";
   randomizedDelaySec = "45min";
 };
 #system.autoUpgrade.enable = true;
