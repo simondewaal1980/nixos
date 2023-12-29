@@ -8,11 +8,19 @@
  imports =
    [ # Include the results of the hardware scan.
      ./hardware-configuration.nix
-   #<home-manager/nixos>
+      #<home-manager/nixos>
    ];
-     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+#FStab
+fileSystems = {
+  "/".options = [ "compress=zstd" ];
+  "/home".options = [ "compress=zstd" ];
+  "/nix".options = [ "compress=zstd" "noatime" ];
+};
 
      nixpkgs.config.allowUnfree = true;
+     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
  # Use the systemd-boot EFI boot loader.
  boot.loader.systemd-boot.enable = true;
  boot.loader.efi.canTouchEfiVariables = true;
