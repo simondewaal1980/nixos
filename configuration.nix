@@ -153,9 +153,8 @@ gnome.gnome-system-monitor
   xorg.xhost 
   virt-manager
  glxinfo
-#guake
 libsForQt5.yakuake
-
+ libreoffice-fresh
 google-chrome
  #variety
 libsForQt5.bismuth
