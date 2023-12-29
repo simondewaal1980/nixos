@@ -143,7 +143,7 @@ lutris
 fuse3
 spotify
 kdenlive
- onlyoffice-bin
+ #onlyoffice-bin
  krita
 neofetch
   gnome.gnome-software
