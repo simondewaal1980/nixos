@@ -13,7 +13,6 @@
 
 #FStab
 fileSystems = {
-"/boot".options = ["noatime"];  
 "/".options = [ "compress=zstd" ];
   "/home".options = [ "compress=zstd" ];
   "/nix".options = [ "compress=zstd" "noatime" ];
@@ -245,7 +244,7 @@ environment.shellAliases ={
  #ls = "ls -la";
  flakeupd ="nix flake update /flake"; 
  sysupgr = "sudo nixos-rebuild --flake /flake boot ";
- sysswitch = "sudo nixos rebuid --flake /flake switch";  
+ sysswitch = "sudo nixos-rebuid --flake /flake switch";  
  #sysconfig = "sudo vim /etc/nixos/configuration.nix";
  sysclean  = "sudo nix-collect-garbage -d";
  listgen = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
