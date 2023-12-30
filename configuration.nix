@@ -13,7 +13,7 @@
 
 #FStab
 fileSystems = {
-"/boot"  
+"/boot";  
 "/".options = [ "compress=zstd" ];
   "/home".options = [ "compress=zstd" ];
   "/nix".options = [ "compress=zstd" "noatime" ];
