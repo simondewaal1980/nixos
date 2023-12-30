@@ -243,7 +243,7 @@ nix.settings.auto-optimise-store = true;
 
 environment.shellAliases ={
  #ls = "ls -la";
- flakeupd ="nix flake update /flake" 
+ flakeupd ="nix flake update /flake"; 
  sysupgr = "sudo nixos-rebuild --flake /flake boot ";
  sysswitch = "sudo nixos rebuid --flake /flake switch";  
  #sysconfig = "sudo vim /etc/nixos/configuration.nix";
