@@ -8,9 +8,19 @@
  imports =
    [ # Include the results of the hardware scan.
      ./hardware-configuration.nix
-   <home-manager/nixos>
+      #<home-manager/nixos>
    ];
-   nixpkgs.config.allowUnfree = true;
+
+#FStab
+fileSystems = {
+"/".options = [ "compress=zstd" ];
+  "/home".options = [ "compress=zstd" ];
+  "/nix".options = [ "compress=zstd" "noatime" ];
+};
+
+     nixpkgs.config.allowUnfree = true;
+     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
  # Use the systemd-boot EFI boot loader.
  boot.loader.systemd-boot.enable = true;
  boot.loader.efi.canTouchEfiVariables = true;
@@ -133,7 +143,7 @@ lutris
 fuse3
 spotify
 kdenlive
- onlyoffice-bin
+ #onlyoffice-bin
  krita
 neofetch
   gnome.gnome-software
@@ -143,9 +153,8 @@ gnome.gnome-system-monitor
   xorg.xhost 
   virt-manager
  glxinfo
-#guake
 libsForQt5.yakuake
-
+ libreoffice-fresh
 google-chrome
  #variety
 libsForQt5.bismuth
@@ -207,8 +216,19 @@ programs.steam.enable =true;
 programs.bash.interactiveShellInit ="neofetch" ;
 
 #autoupdater
-system.autoUpgrade.enable = true;
-system.autoUpgrade.allowReboot = false;
+system.autoUpgrade = {
+  enable = true;
+  flake = "/flake"; 
+  flags = [
+    "--update-input"
+    "nixpkgs"
+    "-L" # print build logs
+  ];
+  dates = "19:00";
+  randomizedDelaySec = "45min";
+};
+#system.autoUpgrade.enable = true;
+#system.autoUpgrade.allowReboot = false;
 #Auto garbagecollector
  nix.gc = {
        automatic = true;
@@ -222,9 +242,11 @@ nix.settings.auto-optimise-store = true;
 
 environment.shellAliases ={
  #ls = "ls -la";
- sysupgr = "sudo nixos-rebuild boot --upgrade";
- sysswitch = "sudo nixos-rebuild switch --upgrade";  
- sysconfig = "sudo vim /etc/nixos/configuration.nix";
+ flakeupd ="nix flake update /flake"; 
+ sysupgr = "sudo nixos-rebuild --flake /flake boot ";
+ sysswitch = "sudo nixos-rebuild --flake /flake switch";  
+  
+ #sysconfig = "sudo vim /etc/nixos/configuration.nix";
  sysclean  = "sudo nix-collect-garbage -d";
  listgen = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
 
