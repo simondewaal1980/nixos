@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 let {
 
-user = "simon"
+user = "simon";
 }
 in {
  imports =
