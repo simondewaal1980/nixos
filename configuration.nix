@@ -3,8 +3,11 @@
 # and in the NixOS manual (accessible by running `nixos-help`).
 
 { config, pkgs, ... }:
+let {
 
-{
+user = "simon"
+}
+in {
  imports =
    [ # Include the results of the hardware scan.
      ./hardware-configuration.nix
@@ -103,7 +106,7 @@ hardware.opengl.driSupport32Bit = true;
  # services.xserver.libinput.enable = true;
 
  # Define a user account. Don't forget to set a password with .
-  users.users.simon = {
+  users.users.${user} = {
     isNormalUser = true;
      description  = "Simon de Waal";
     extraGroups = [ "wheel" "libvirtd" ]; # Enable  for the user.
