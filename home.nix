@@ -1,7 +1,7 @@
  
 #Home manager
 
-home-manager.users.simon = { pkgs, ... }: {
+home-manager.users.${user} = { pkgs, ... }: {
  home.stateVersion = "23.11";
 nixpkgs.config.allowUnfree = true;
  home.packages = [ 
