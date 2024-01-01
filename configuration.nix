@@ -11,13 +11,6 @@
       #<home-manager/nixos>
    ];
 
-#user variable
-let {
-
-user = "simon"
-
-}
-in {
 #FStab
 fileSystems = {
 "/".options = [ "compress=zstd" ];
@@ -110,7 +103,7 @@ hardware.opengl.driSupport32Bit = true;
  # services.xserver.libinput.enable = true;
 
  # Define a user account. Don't forget to set a password with .
-  users.users.$(user) = {
+  users.users.simon = {
     isNormalUser = true;
      description  = "Simon de Waal";
     extraGroups = [ "wheel" "libvirtd" ]; # Enable  for the user.
